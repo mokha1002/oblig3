@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinobilletter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card mt-5">
+                <div class="card-header bg-primary text-white">
+                    <h1 class="mb-0">Bestilling av kinobilletter</h1>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="bestilling">Velg film:</label>
+                        <select class="form-control" id="bestilling">
+                            <option selected disabled id="default">Velg her</option>
+                            <option id="film1">Harry Potter og de vises stein</option>
+                            <option id="film2">Ringenes herre: Ringens brorskap</option>
+                            <option id="film3">Avatar</option>
+                        </select>
+                    </div>
+
+                    <form>
+                        <div class="form-group">
+                            <label for="antall">Antall</label>
+                            <input type="text" class="form-control" id="antall" pattern="[1-9][0-9]*" required title="Skriv inn antall">
+                            <span id="feilAntall" class="text-danger"></span>
+                        </div>
+                    </form>
+
+                    <form>
+                        <div class="form-group">
+                            <label for="fornavn">Fornavn</label>
+                            <input type="text" class="form-control" id="fornavn" pattern="[A-Za-z]" required title="Skriv inn fornavn">
+                            <span id="feilFornavn" class="text-danger"></span>
+                        </div>
+                    </form>
+
+                    <form>
+                        <div class="form-group">
+                            <label for="etternavn">Etternavn</label>
+                            <input type="text" class="form-control" id="etternavn" pattern="[A-Za-z]" required title="Skriv inn etternavn">
+                            <span id="feilEtternavn" class="text-danger"></span>
+                        </div>
+                    </form>
+
+                    <form>
+                        <div class="form-group">
+                            <label for="telefonnr">Telefonnr</label>
+                            <input type="text" class="form-control" id="telefonnr" pattern="[1-9][0-9]{8}" required title="Skriv inn Telefonnummer">
+                            <span id="feilTlf" class="text-danger"></span>
+                        </div>
+                    </form>
+
+                    <form>
+                        <div class="form-group">
+                            <label for="epost">Epost</label>
+                            <input type="text" class="form-control" id="epost" pattern=".+@.+" required title="Skriv inn epost">
+                            <span id="feilEpost" class="text-danger"></span>
+                        </div>
+                    </form>
+
+                    <button type="button" class="btn btn-primary btn-block" onclick="hentData()">Kjøp billett</button>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0">Alle billetter</h2>
+                </div>
+            </div>
+            <div class="card-body">
+                <div id="utskriftFilmArray"></div>
+                <button type="button" class="btn btn-danger btn-block" id="slettBilletter" onclick="slettKunder()">Slett alle billetter</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
