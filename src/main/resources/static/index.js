@@ -41,7 +41,6 @@ function hentData () {
         $("#etternavn").val("");
         $("#telefonnr").val("");
         $("#epost").val("");
-
     } else {
         // Viser feilmeldinger for hver valideringsregel som ikke er oppfylt
         if (antall === "") {
@@ -92,7 +91,7 @@ function hentAlleKunder(){
 //funksjon for å formatere og vise kundedata i en tabell.
 function formaterData(kunder){
     // Oppretter HTML for en tabell og legger til overskrifter
-    let ut = "<table><tr><th>Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnummer</th><th>Epost</th></tr>";
+    let ut = "<table class='table table-striped'><tr><th>Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnummer</th><th>Epost</th></tr>";
     // Går gjennom hver kunde og legger til rader i tabellen
     for (const kunde of kunder){
         ut+="<tr><td>"+kunde.film+"</td><td>"+kunde.antall+"</td><td>"+kunde.fornavn+"</td><td>"+kunde.etternavn+"</td><td>"+kunde.telefonnr+"</td><td>"+kunde.epost+"</td></tr>";
